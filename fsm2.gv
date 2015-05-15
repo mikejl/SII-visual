@@ -1,0 +1,128 @@
+// None
+digraph http_finite_state_machine {
+rankdir=LR
+size="8,5"
+	httpd
+	httpd_t
+		httpd -> httpd_t
+	httpd_can_network_relay
+	httpd_t
+		httpd_t -> httpd_can_network_relay
+	httpd_can_connect_mythtv
+	httpd_t
+		httpd_t -> httpd_can_connect_mythtv
+	httpd_can_network_connect_db
+	httpd_suexec_t
+		httpd_suexec_t -> httpd_can_network_connect_db
+	httpd_use_gpg
+	httpd_t
+		httpd_t -> httpd_use_gpg
+	httpd_dbus_sssd
+	httpd_t
+		httpd_t -> httpd_dbus_sssd
+	httpd_enable_cgi
+	httpd_suexec_t
+		httpd_suexec_t -> httpd_enable_cgi
+	httpd_verify_dns
+	httpd_t
+		httpd_t -> httpd_verify_dns
+	git_cgi_enable_homedirs
+	httpd_git_script_t
+		httpd_git_script_t -> git_cgi_enable_homedirs
+	httpd_anon_write
+	httpd_t
+		httpd_t -> httpd_anon_write
+	httpd_use_cifs
+	httpd_suexec_t
+		httpd_suexec_t -> httpd_use_cifs
+	httpd_enable_homedirs
+	httpd_suexec_t
+		httpd_suexec_t -> httpd_enable_homedirs
+	httpd_unified
+	httpd_sys_script_t
+		httpd_sys_script_t -> httpd_unified
+	httpd_run_stickshift
+	httpd_t
+		httpd_t -> httpd_run_stickshift
+	httpd_use_fusefs
+	httpd_suexec_t
+		httpd_suexec_t -> httpd_use_fusefs
+	httpd_can_connect_ldap
+	httpd_t
+		httpd_t -> httpd_can_connect_ldap
+	httpd_can_network_connect
+	httpd_t
+		httpd_t -> httpd_can_network_connect
+	httpd_use_sasl
+	httpd_t
+		httpd_t -> httpd_use_sasl
+	httpd_tty_comm
+	httpd_suexec_t
+		httpd_suexec_t -> httpd_tty_comm
+	httpd_sys_script_anon_write
+	httpd_sys_script_t
+		httpd_sys_script_t -> httpd_sys_script_anon_write
+	git_cgi_use_nfs
+	httpd_git_script_t
+		httpd_git_script_t -> git_cgi_use_nfs
+	httpd_graceful_shutdown
+	httpd_t
+		httpd_t -> httpd_graceful_shutdown
+	httpd_can_connect_ftp
+	httpd_t
+		httpd_t -> httpd_can_connect_ftp
+	httpd_read_user_content
+	httpd_sys_script_t
+		httpd_sys_script_t -> httpd_read_user_content
+	httpd_use_nfs
+	httpd_suexec_t
+		httpd_suexec_t -> httpd_use_nfs
+	httpd_can_connect_zabbix
+	httpd_t
+		httpd_t -> httpd_can_connect_zabbix
+	httpd_tmp_exec
+	httpd_sys_script_t
+		httpd_sys_script_t -> httpd_tmp_exec
+	httpd_manage_ipa
+	httpd_t
+		httpd_t -> httpd_manage_ipa
+	httpd_can_sendmail
+	httpd_t
+		httpd_t -> httpd_can_sendmail
+	httpd_builtin_scripting
+	httpd_t
+		httpd_t -> httpd_builtin_scripting
+	httpd_dbus_avahi
+	httpd_t
+		httpd_t -> httpd_dbus_avahi
+	httpd_can_check_spam
+	httpd_t
+		httpd_t -> httpd_can_check_spam
+	httpd_can_network_memcache
+	httpd_t
+		httpd_t -> httpd_can_network_memcache
+	httpd_can_network_connect_cobbler
+	httpd_t
+		httpd_t -> httpd_can_network_connect_cobbler
+	httpd_serve_cobbler_files
+	httpd_t
+		httpd_t -> httpd_serve_cobbler_files
+	git_cgi_use_cifs
+	httpd_git_script_t
+		httpd_git_script_t -> git_cgi_use_cifs
+	httpd_execmem
+	httpd_sys_script_t
+		httpd_sys_script_t -> httpd_execmem
+	httpd_ssi_exec
+	httpd_t
+		httpd_t -> httpd_ssi_exec
+	httpd_use_openstack
+	httpd_sys_script_t
+		httpd_sys_script_t -> httpd_use_openstack
+	httpd_enable_ftp_server
+	httpd_t
+		httpd_t -> httpd_enable_ftp_server
+	httpd_setrlimit
+	httpd_t
+		httpd_t -> httpd_setrlimit
+}
