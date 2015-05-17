@@ -1,0 +1,110 @@
+// None
+digraph ftp_test1_full {
+rankdir=LR
+size="8,5"
+	vsftpd
+	ftpd_t
+		vsftpd -> ftpd_t
+	ftp_home_dir
+	ftpd_t
+		ftpd_t -> ftp_home_dir
+	ftpd_use_cifs
+	ftpd_t
+		ftpd_t -> ftpd_use_cifs
+	ftpd_use_fusefs
+	ftpd_t
+		ftpd_t -> ftpd_use_fusefs
+	ftpd_connect_db
+	ftpd_t
+		ftpd_t -> ftpd_connect_db
+	ftpd_full_access
+	ftpd_t
+		ftpd_t -> ftpd_full_access
+	tftp_home_dir
+	tftpd_t
+		tftpd_t -> tftp_home_dir
+	sftpd_enable_homedirs
+	sftpd_t
+		sftpd_t -> sftpd_enable_homedirs
+	ftpd_use_passive_mode
+	ftpd_t
+		ftpd_t -> ftpd_use_passive_mode
+	sftpd_write_ssh_home
+	sftpd_t
+		sftpd_t -> sftpd_write_ssh_home
+	ftpd_use_nfs
+	ftpd_t
+		ftpd_t -> ftpd_use_nfs
+	ftpd_connect_all_unreserved
+	ftpd_t
+		ftpd_t -> ftpd_connect_all_unreserved
+	sftpd_full_access
+	sftpd_t
+		sftpd_t -> sftpd_full_access
+	tftp_anon_write
+	tftpd_t
+		tftpd_t -> tftp_anon_write
+	ftpd_anon_write
+	ftpd_t
+		ftpd_t -> ftpd_anon_write
+	sftpd_anon_write
+	sftpd_t
+		sftpd_t -> sftpd_anon_write
+	"/etc/cron\.monthly/proftpd"
+	ftpd_exec_t
+		ftpd_exec_t -> "/etc/cron\.monthly/proftpd"
+	"/etc/proftpd\.conf"
+	ftpd_etc_t
+		ftpd_etc_t -> "/etc/proftpd\.conf"
+	"/etc/rc\.d/init\.d/proftpd"
+	ftpd_initrc_exec_t
+		ftpd_initrc_exec_t -> "/etc/rc\.d/init\.d/proftpd"
+	"/etc/rc\.d/init\.d/vsftpd"
+	ftpd_initrc_exec_t
+		ftpd_initrc_exec_t -> "/etc/rc\.d/init\.d/vsftpd"
+	"/etc/xinetd\.d/tftp"
+	tftpd_etc_t
+		tftpd_etc_t -> "/etc/xinetd\.d/tftp"
+	"/tftpboot"
+	tftpdir_t
+		tftpdir_t -> "/tftpboot"
+	"/tftpboot/.*"
+	tftpdir_t
+		tftpdir_t -> "/tftpboot/.*"
+	"/usr/bin/ftpdctl"
+	ftpdctl_exec_t
+		ftpdctl_exec_t -> "/usr/bin/ftpdctl"
+	"/usr/kerberos/sbin/ftpd"
+	ftpd_exec_t
+		ftpd_exec_t -> "/usr/kerberos/sbin/ftpd"
+	"/usr/sbin/atftpd"
+	tftpd_exec_t
+		tftpd_exec_t -> "/usr/sbin/atftpd"
+	"/usr/sbin/ftpwho"
+	ftpd_exec_t
+		ftpd_exec_t -> "/usr/sbin/ftpwho"
+	"/usr/sbin/in\.ftpd"
+	ftpd_exec_t
+		ftpd_exec_t -> "/usr/sbin/in\.ftpd"
+	"/usr/sbin/in\.tftpd"
+	tftpd_exec_t
+		tftpd_exec_t -> "/usr/sbin/in\.tftpd"
+	"/usr/sbin/muddleftpd"
+	ftpd_exec_t
+		ftpd_exec_t -> "/usr/sbin/muddleftpd"
+	"/usr/sbin/proftpd"
+	ftpd_exec_t
+		ftpd_exec_t -> "/usr/sbin/proftpd"
+	"/usr/sbin/vsftpd"
+	ftpd_exec_t
+		ftpd_exec_t -> "/usr/sbin/vsftpd"
+	"/var/lib/tftpboot(/.*)?"
+	tftpdir_rw_t
+		tftpdir_rw_t -> "/var/lib/tftpboot(/.*)?"
+	"/var/lock/subsys/*.ftpd"
+	ftpd_lock_t
+		ftpd_lock_t -> "/var/lock/subsys/*.ftpd"
+	"/var/run/proftpd.*"
+	ftpd_var_run_t
+		ftpd_var_run_t -> "/var/run/proftpd.*"
+}

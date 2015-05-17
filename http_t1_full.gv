@@ -1,0 +1,830 @@
+// None
+digraph http_test1_Full {
+rankdir=LR
+size="8,5"
+	httpd
+	httpd_t
+		httpd -> httpd_t
+	httpd_can_network_relay
+	httpd_t
+		httpd_t -> httpd_can_network_relay
+	httpd_can_connect_mythtv
+	httpd_t
+		httpd_t -> httpd_can_connect_mythtv
+	httpd_can_network_connect_db
+	httpd_suexec_t
+		httpd_suexec_t -> httpd_can_network_connect_db
+	httpd_use_gpg
+	httpd_t
+		httpd_t -> httpd_use_gpg
+	httpd_dbus_sssd
+	httpd_t
+		httpd_t -> httpd_dbus_sssd
+	httpd_enable_cgi
+	httpd_suexec_t
+		httpd_suexec_t -> httpd_enable_cgi
+	httpd_verify_dns
+	httpd_t
+		httpd_t -> httpd_verify_dns
+	git_cgi_enable_homedirs
+	httpd_git_script_t
+		httpd_git_script_t -> git_cgi_enable_homedirs
+	httpd_anon_write
+	httpd_t
+		httpd_t -> httpd_anon_write
+	httpd_use_cifs
+	httpd_suexec_t
+		httpd_suexec_t -> httpd_use_cifs
+	httpd_enable_homedirs
+	httpd_suexec_t
+		httpd_suexec_t -> httpd_enable_homedirs
+	httpd_unified
+	httpd_sys_script_t
+		httpd_sys_script_t -> httpd_unified
+	httpd_run_stickshift
+	httpd_t
+		httpd_t -> httpd_run_stickshift
+	httpd_use_fusefs
+	httpd_suexec_t
+		httpd_suexec_t -> httpd_use_fusefs
+	httpd_can_connect_ldap
+	httpd_t
+		httpd_t -> httpd_can_connect_ldap
+	httpd_can_network_connect
+	httpd_t
+		httpd_t -> httpd_can_network_connect
+	httpd_use_sasl
+	httpd_t
+		httpd_t -> httpd_use_sasl
+	httpd_tty_comm
+	httpd_suexec_t
+		httpd_suexec_t -> httpd_tty_comm
+	httpd_sys_script_anon_write
+	httpd_sys_script_t
+		httpd_sys_script_t -> httpd_sys_script_anon_write
+	git_cgi_use_nfs
+	httpd_git_script_t
+		httpd_git_script_t -> git_cgi_use_nfs
+	httpd_graceful_shutdown
+	httpd_t
+		httpd_t -> httpd_graceful_shutdown
+	httpd_can_connect_ftp
+	httpd_t
+		httpd_t -> httpd_can_connect_ftp
+	httpd_read_user_content
+	httpd_sys_script_t
+		httpd_sys_script_t -> httpd_read_user_content
+	httpd_use_nfs
+	httpd_suexec_t
+		httpd_suexec_t -> httpd_use_nfs
+	httpd_can_connect_zabbix
+	httpd_t
+		httpd_t -> httpd_can_connect_zabbix
+	httpd_tmp_exec
+	httpd_sys_script_t
+		httpd_sys_script_t -> httpd_tmp_exec
+	httpd_manage_ipa
+	httpd_t
+		httpd_t -> httpd_manage_ipa
+	httpd_can_sendmail
+	httpd_t
+		httpd_t -> httpd_can_sendmail
+	httpd_builtin_scripting
+	httpd_t
+		httpd_t -> httpd_builtin_scripting
+	httpd_dbus_avahi
+	httpd_t
+		httpd_t -> httpd_dbus_avahi
+	httpd_can_check_spam
+	httpd_t
+		httpd_t -> httpd_can_check_spam
+	httpd_can_network_memcache
+	httpd_t
+		httpd_t -> httpd_can_network_memcache
+	httpd_can_network_connect_cobbler
+	httpd_t
+		httpd_t -> httpd_can_network_connect_cobbler
+	httpd_serve_cobbler_files
+	httpd_t
+		httpd_t -> httpd_serve_cobbler_files
+	git_cgi_use_cifs
+	httpd_git_script_t
+		httpd_git_script_t -> git_cgi_use_cifs
+	httpd_execmem
+	httpd_sys_script_t
+		httpd_sys_script_t -> httpd_execmem
+	httpd_ssi_exec
+	httpd_t
+		httpd_t -> httpd_ssi_exec
+	httpd_use_openstack
+	httpd_sys_script_t
+		httpd_sys_script_t -> httpd_use_openstack
+	httpd_enable_ftp_server
+	httpd_t
+		httpd_t -> httpd_enable_ftp_server
+	httpd_setrlimit
+	httpd_t
+		httpd_t -> httpd_setrlimit
+	"/etc/WebCalendar(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/etc/WebCalendar(/.*)?"
+	"/etc/apache(2)?(/.*)?"
+	httpd_config_t
+		httpd_config_t -> "/etc/apache(2)?(/.*)?"
+	"/etc/apache-ssl(2)?(/.*)?"
+	httpd_config_t
+		httpd_config_t -> "/etc/apache-ssl(2)?(/.*)?"
+	"/etc/cherokee(/.*)?"
+	httpd_config_t
+		httpd_config_t -> "/etc/cherokee(/.*)?"
+	"/etc/drupal.*"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/etc/drupal.*"
+	"/etc/glpi(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/etc/glpi(/.*)?"
+	"/etc/horde(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/etc/horde(/.*)?"
+	"/etc/htdig(/.*)?"
+	httpd_sys_content_t
+		httpd_sys_content_t -> "/etc/htdig(/.*)?"
+	"/etc/httpd(/.*)?"
+	httpd_config_t
+		httpd_config_t -> "/etc/httpd(/.*)?"
+	"/etc/httpd/conf/keytab"
+	httpd_keytab_t
+		httpd_keytab_t -> "/etc/httpd/conf/keytab"
+	"/etc/httpd/logs"
+	httpd_log_t
+		httpd_log_t -> "/etc/httpd/logs"
+	"/etc/httpd/modules"
+	httpd_modules_t
+		httpd_modules_t -> "/etc/httpd/modules"
+	"/etc/init\.d/cherokee"
+	httpd_initrc_exec_t
+		httpd_initrc_exec_t -> "/etc/init\.d/cherokee"
+	"/etc/lighttpd(/.*)?"
+	httpd_config_t
+		httpd_config_t -> "/etc/lighttpd(/.*)?"
+	"/etc/mock/koji(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/etc/mock/koji(/.*)?"
+	"/etc/nginx(/.*)?"
+	httpd_config_t
+		httpd_config_t -> "/etc/nginx(/.*)?"
+	"/etc/owncloud(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/etc/owncloud(/.*)?"
+	"/etc/rc\.d/init\.d/httpd"
+	httpd_initrc_exec_t
+		httpd_initrc_exec_t -> "/etc/rc\.d/init\.d/httpd"
+	"/etc/rc\.d/init\.d/lighttpd"
+	httpd_initrc_exec_t
+		httpd_initrc_exec_t -> "/etc/rc\.d/init\.d/lighttpd"
+	"/etc/thttpd\.conf"
+	httpd_config_t
+		httpd_config_t -> "/etc/thttpd\.conf"
+	"/etc/vhosts"
+	httpd_config_t
+		httpd_config_t -> "/etc/vhosts"
+	"/etc/z-push(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/etc/z-push(/.*)?"
+	"/etc/zabbix/web(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/etc/zabbix/web(/.*)?"
+	"/opt/.*\.cgi"
+	httpd_sys_script_exec_t
+		httpd_sys_script_exec_t -> "/opt/.*\.cgi"
+	"/opt/dirsrv/var/run/dirsrv/dsgw/cookies(/.*)?"
+	httpd_var_run_t
+		httpd_var_run_t -> "/opt/dirsrv/var/run/dirsrv/dsgw/cookies(/.*)?"
+	"/srv/([^/]*/)?www(/.*)?"
+	httpd_sys_content_t
+		httpd_sys_content_t -> "/srv/([^/]*/)?www(/.*)?"
+	"/srv/([^/]*/)?www/logs(/.*)?"
+	httpd_log_t
+		httpd_log_t -> "/srv/([^/]*/)?www/logs(/.*)?"
+	"/srv/gallery2(/.*)?"
+	httpd_sys_content_t
+		httpd_sys_content_t -> "/srv/gallery2(/.*)?"
+	"/srv/gallery2/smarty(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/srv/gallery2/smarty(/.*)?"
+	"/usr/.*\.cgi"
+	httpd_sys_script_exec_t
+		httpd_sys_script_exec_t -> "/usr/.*\.cgi"
+	"/usr/bin/htsslpass"
+	httpd_helper_exec_t
+		httpd_helper_exec_t -> "/usr/bin/htsslpass"
+	"/usr/bin/mojomojo_fastcgi\.pl"
+	httpd_mojomojo_script_exec_t
+		httpd_mojomojo_script_exec_t -> "/usr/bin/mojomojo_fastcgi\.pl"
+	"/usr/bin/mongrel_rails"
+	httpd_exec_t
+		httpd_exec_t -> "/usr/bin/mongrel_rails"
+	"/usr/lib/apache(/.*)?"
+	httpd_modules_t
+		httpd_modules_t -> "/usr/lib/apache(/.*)?"
+	"/usr/lib/apache(2)?/suexec(2)?"
+	httpd_suexec_exec_t
+		httpd_suexec_exec_t -> "/usr/lib/apache(2)?/suexec(2)?"
+	"/usr/lib/apache-ssl/.+"
+	httpd_exec_t
+		httpd_exec_t -> "/usr/lib/apache-ssl/.+"
+	"/usr/lib/apache2/modules(/.*)?"
+	httpd_modules_t
+		httpd_modules_t -> "/usr/lib/apache2/modules(/.*)?"
+	"/usr/lib/cgi-bin(/.*)?"
+	httpd_sys_script_exec_t
+		httpd_sys_script_exec_t -> "/usr/lib/cgi-bin(/.*)?"
+	"/usr/lib/cgi-bin/(nph-)?cgiwrap(d)?"
+	httpd_suexec_exec_t
+		httpd_suexec_exec_t -> "/usr/lib/cgi-bin/(nph-)?cgiwrap(d)?"
+	"/usr/lib/cgi-bin/check"
+	httpd_w3c_validator_script_exec_t
+		httpd_w3c_validator_script_exec_t -> "/usr/lib/cgi-bin/check"
+	"/usr/lib/cgi-bin/nagios(/.+)?"
+	httpd_nagios_script_exec_t
+		httpd_nagios_script_exec_t -> "/usr/lib/cgi-bin/nagios(/.+)?"
+	"/usr/lib/cgi-bin/netsaint(/.*)?"
+	httpd_nagios_script_exec_t
+		httpd_nagios_script_exec_t -> "/usr/lib/cgi-bin/netsaint(/.*)?"
+	"/usr/lib/cherokee(/.*)?"
+	httpd_modules_t
+		httpd_modules_t -> "/usr/lib/cherokee(/.*)?"
+	"/usr/lib/dirsrv/cgi-bin(/.*)?"
+	httpd_dirsrvadmin_script_exec_t
+		httpd_dirsrvadmin_script_exec_t -> "/usr/lib/dirsrv/cgi-bin(/.*)?"
+	"/usr/lib/dirsrv/dsgw-cgi-bin(/.*)?"
+	httpd_dirsrvadmin_script_exec_t
+		httpd_dirsrvadmin_script_exec_t -> "/usr/lib/dirsrv/dsgw-cgi-bin(/.*)?"
+	"/usr/lib/httpd(/.*)?"
+	httpd_modules_t
+		httpd_modules_t -> "/usr/lib/httpd(/.*)?"
+	"/usr/lib/icinga/cgi(/.*)?"
+	httpd_nagios_script_exec_t
+		httpd_nagios_script_exec_t -> "/usr/lib/icinga/cgi(/.*)?"
+	"/usr/lib/lighttpd(/.*)?"
+	httpd_modules_t
+		httpd_modules_t -> "/usr/lib/lighttpd(/.*)?"
+	"/usr/lib/man2html/cgi-bin/man/man2html"
+	httpd_man2html_script_exec_t
+		httpd_man2html_script_exec_t -> "/usr/lib/man2html/cgi-bin/man/man2html"
+	"/usr/lib/man2html/cgi-bin/man/mansec"
+	httpd_man2html_script_exec_t
+		httpd_man2html_script_exec_t -> "/usr/lib/man2html/cgi-bin/man/mansec"
+	"/usr/lib/man2html/cgi-bin/man/manwhatis"
+	httpd_man2html_script_exec_t
+		httpd_man2html_script_exec_t -> "/usr/lib/man2html/cgi-bin/man/manwhatis"
+	"/usr/lib/mediawiki/math/texvc"
+	httpd_mediawiki_script_exec_t
+		httpd_mediawiki_script_exec_t -> "/usr/lib/mediawiki/math/texvc"
+	"/usr/lib/mediawiki/math/texvc_tes"
+	httpd_mediawiki_script_exec_t
+		httpd_mediawiki_script_exec_t -> "/usr/lib/mediawiki/math/texvc_tes"
+	"/usr/lib/mediawiki/math/texvc_tex"
+	httpd_mediawiki_script_exec_t
+		httpd_mediawiki_script_exec_t -> "/usr/lib/mediawiki/math/texvc_tex"
+	"/usr/lib/nagios/cgi(/.*)?"
+	httpd_nagios_script_exec_t
+		httpd_nagios_script_exec_t -> "/usr/lib/nagios/cgi(/.*)?"
+	"/usr/lib/nagios/cgi-bin(/.*)?"
+	httpd_nagios_script_exec_t
+		httpd_nagios_script_exec_t -> "/usr/lib/nagios/cgi-bin(/.*)?"
+	"/usr/lib/squid/cachemgr\.cgi"
+	httpd_squid_script_exec_t
+		httpd_squid_script_exec_t -> "/usr/lib/squid/cachemgr\.cgi"
+	"/usr/lib/systemd/system/httpd.*"
+	httpd_unit_file_t
+		httpd_unit_file_t -> "/usr/lib/systemd/system/httpd.*"
+	"/usr/lib/systemd/system/jetty.*"
+	httpd_unit_file_t
+		httpd_unit_file_t -> "/usr/lib/systemd/system/jetty.*"
+	"/usr/lib/systemd/system/nginx.*"
+	httpd_unit_file_t
+		httpd_unit_file_t -> "/usr/lib/systemd/system/nginx.*"
+	"/usr/lib/systemd/system/php-fpm.*"
+	httpd_unit_file_t
+		httpd_unit_file_t -> "/usr/lib/systemd/system/php-fpm.*"
+	"/usr/libexec/httpd-ssl-pass-dialog"
+	httpd_passwd_exec_t
+		httpd_passwd_exec_t -> "/usr/libexec/httpd-ssl-pass-dialog"
+	"/usr/libexec/zoneminder/cgi-bin(/.*)?"
+	httpd_zoneminder_script_exec_t
+		httpd_zoneminder_script_exec_t -> "/usr/libexec/zoneminder/cgi-bin(/.*)?"
+	"/usr/s?bin/(oo|rhc)-restorer-wrapper.sh"
+	httpd_openshift_script_exec_t
+		httpd_openshift_script_exec_t -> "/usr/s?bin/(oo|rhc)-restorer-wrapper.sh"
+	"/usr/sbin/apache(2)?"
+	httpd_exec_t
+		httpd_exec_t -> "/usr/sbin/apache(2)?"
+	"/usr/sbin/apache-ssl(2)?"
+	httpd_exec_t
+		httpd_exec_t -> "/usr/sbin/apache-ssl(2)?"
+	"/usr/sbin/cherokee"
+	httpd_exec_t
+		httpd_exec_t -> "/usr/sbin/cherokee"
+	"/usr/sbin/htcacheclean"
+	httpd_exec_t
+		httpd_exec_t -> "/usr/sbin/htcacheclean"
+	"/usr/sbin/httpd(\.worker)?"
+	httpd_exec_t
+		httpd_exec_t -> "/usr/sbin/httpd(\.worker)?"
+	"/usr/sbin/httpd\.event"
+	httpd_exec_t
+		httpd_exec_t -> "/usr/sbin/httpd\.event"
+	"/usr/sbin/lighttpd"
+	httpd_exec_t
+		httpd_exec_t -> "/usr/sbin/lighttpd"
+	"/usr/sbin/nginx"
+	httpd_exec_t
+		httpd_exec_t -> "/usr/sbin/nginx"
+	"/usr/sbin/php-fpm"
+	httpd_exec_t
+		httpd_exec_t -> "/usr/sbin/php-fpm"
+	"/usr/sbin/rotatelogs"
+	httpd_rotatelogs_exec_t
+		httpd_rotatelogs_exec_t -> "/usr/sbin/rotatelogs"
+	"/usr/sbin/suexec"
+	httpd_suexec_exec_t
+		httpd_suexec_exec_t -> "/usr/sbin/suexec"
+	"/usr/sbin/thttpd"
+	httpd_exec_t
+		httpd_exec_t -> "/usr/sbin/thttpd"
+	"/usr/share/awstats/wwwroot(/.*)?"
+	httpd_awstats_content_t
+		httpd_awstats_content_t -> "/usr/share/awstats/wwwroot(/.*)?"
+	"/usr/share/awstats/wwwroot/cgi-bin(/.*)?"
+	httpd_awstats_script_exec_t
+		httpd_awstats_script_exec_t -> "/usr/share/awstats/wwwroot/cgi-bin(/.*)?"
+	"/usr/share/bugzilla(/.*)?"
+	httpd_bugzilla_content_t
+		httpd_bugzilla_content_t -> "/usr/share/bugzilla(/.*)?"
+	"/usr/share/bugzilla/.*\.cgi"
+	httpd_bugzilla_script_exec_t
+		httpd_bugzilla_script_exec_t -> "/usr/share/bugzilla/.*\.cgi"
+	"/usr/share/collectd/collection3/bin/.*\.cgi"
+	httpd_collectd_script_exec_t
+		httpd_collectd_script_exec_t -> "/usr/share/collectd/collection3/bin/.*\.cgi"
+	"/usr/share/cvsweb/cvsweb\.cgi"
+	httpd_cvs_script_exec_t
+		httpd_cvs_script_exec_t -> "/usr/share/cvsweb/cvsweb\.cgi"
+	"/usr/share/doc/ghc/html(/.*)?"
+	httpd_sys_content_t
+		httpd_sys_content_t -> "/usr/share/doc/ghc/html(/.*)?"
+	"/usr/share/drupal.*"
+	httpd_sys_content_t
+		httpd_sys_content_t -> "/usr/share/drupal.*"
+	"/usr/share/dspam-web/dspam\.cgi"
+	httpd_dspam_script_exec_t
+		httpd_dspam_script_exec_t -> "/usr/share/dspam-web/dspam\.cgi"
+	"/usr/share/glpi(/.*)?"
+	httpd_sys_content_t
+		httpd_sys_content_t -> "/usr/share/glpi(/.*)?"
+	"/usr/share/htdig(/.*)?"
+	httpd_sys_content_t
+		httpd_sys_content_t -> "/usr/share/htdig(/.*)?"
+	"/usr/share/icecast(/.*)?"
+	httpd_sys_content_t
+		httpd_sys_content_t -> "/usr/share/icecast(/.*)?"
+	"/usr/share/jetty/bin/jetty.sh"
+	httpd_exec_t
+		httpd_exec_t -> "/usr/share/jetty/bin/jetty.sh"
+	"/usr/share/joomla(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/usr/share/joomla(/.*)?"
+	"/usr/share/lightsquid/cgi(/.*)?"
+	httpd_squid_script_exec_t
+		httpd_squid_script_exec_t -> "/usr/share/lightsquid/cgi(/.*)?"
+	"/usr/share/mediawiki(/.*)?"
+	httpd_mediawiki_content_t
+		httpd_mediawiki_content_t -> "/usr/share/mediawiki(/.*)?"
+	"/usr/share/mojomojo/root(/.*)?"
+	httpd_mojomojo_content_t
+		httpd_mojomojo_content_t -> "/usr/share/mojomojo/root(/.*)?"
+	"/usr/share/mythtv(/.*)?"
+	httpd_mythtv_content_t
+		httpd_mythtv_content_t -> "/usr/share/mythtv(/.*)?"
+	"/usr/share/mythtv/mythweather/scripts(/.*)?"
+	httpd_mythtv_script_exec_t
+		httpd_mythtv_script_exec_t -> "/usr/share/mythtv/mythweather/scripts(/.*)?"
+	"/usr/share/mythweb(/.*)?"
+	httpd_mythtv_content_t
+		httpd_mythtv_content_t -> "/usr/share/mythweb(/.*)?"
+	"/usr/share/mythweb/mythweb\.pl"
+	httpd_mythtv_script_exec_t
+		httpd_mythtv_script_exec_t -> "/usr/share/mythweb/mythweb\.pl"
+	"/usr/share/ntop/html(/.*)?"
+	httpd_sys_content_t
+		httpd_sys_content_t -> "/usr/share/ntop/html(/.*)?"
+	"/usr/share/openca/htdocs(/.*)?"
+	httpd_sys_content_t
+		httpd_sys_content_t -> "/usr/share/openca/htdocs(/.*)?"
+	"/usr/share/prewikka/cgi-bin(/.*)?"
+	httpd_prewikka_script_exec_t
+		httpd_prewikka_script_exec_t -> "/usr/share/prewikka/cgi-bin(/.*)?"
+	"/usr/share/selinux-policy[^/]*/html(/.*)?"
+	httpd_sys_content_t
+		httpd_sys_content_t -> "/usr/share/selinux-policy[^/]*/html(/.*)?"
+	"/usr/share/smokeping/cgi(/.*)?"
+	httpd_smokeping_cgi_script_exec_t
+		httpd_smokeping_cgi_script_exec_t -> "/usr/share/smokeping/cgi(/.*)?"
+	"/usr/share/w3c-markup-validator(/.*)?"
+	httpd_w3c_validator_content_t
+		httpd_w3c_validator_content_t -> "/usr/share/w3c-markup-validator(/.*)?"
+	"/usr/share/w3c-markup-validator/cgi-bin(/.*)?"
+	httpd_w3c_validator_script_exec_t
+		httpd_w3c_validator_script_exec_t -> "/usr/share/w3c-markup-validator/cgi-bin(/.*)?"
+	"/usr/share/wordpress-mu/wp-config\.php"
+	httpd_sys_script_exec_t
+		httpd_sys_script_exec_t -> "/usr/share/wordpress-mu/wp-config\.php"
+	"/usr/share/wordpress-mu/wp-content(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/usr/share/wordpress-mu/wp-content(/.*)?"
+	"/usr/share/wordpress/.*\.php"
+	httpd_sys_script_exec_t
+		httpd_sys_script_exec_t -> "/usr/share/wordpress/.*\.php"
+	"/usr/share/wordpress/wp-content/upgrade(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/usr/share/wordpress/wp-content/upgrade(/.*)?"
+	"/usr/share/wordpress/wp-content/uploads(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/usr/share/wordpress/wp-content/uploads(/.*)?"
+	"/usr/share/wordpress/wp-includes/.*\.php"
+	httpd_sys_script_exec_t
+		httpd_sys_script_exec_t -> "/usr/share/wordpress/wp-includes/.*\.php"
+	"/usr/share/z-push(/.*)?"
+	httpd_sys_content_t
+		httpd_sys_content_t -> "/usr/share/z-push(/.*)?"
+	"/var/cache/cgit(/.*)?"
+	httpd_git_rw_content_t
+		httpd_git_rw_content_t -> "/var/cache/cgit(/.*)?"
+	"/var/cache/gitweb-caching(/.*)?"
+	httpd_git_rw_content_t
+		httpd_git_rw_content_t -> "/var/cache/gitweb-caching(/.*)?"
+	"/var/cache/httpd(/.*)?"
+	httpd_cache_t
+		httpd_cache_t -> "/var/cache/httpd(/.*)?"
+	"/var/cache/lighttpd(/.*)?"
+	httpd_cache_t
+		httpd_cache_t -> "/var/cache/lighttpd(/.*)?"
+	"/var/cache/man2html(/.*)?"
+	httpd_man2html_script_cache_t
+		httpd_man2html_script_cache_t -> "/var/cache/man2html(/.*)?"
+	"/var/cache/mason(/.*)?"
+	httpd_cache_t
+		httpd_cache_t -> "/var/cache/mason(/.*)?"
+	"/var/cache/mediawiki(/.*)?"
+	httpd_cache_t
+		httpd_cache_t -> "/var/cache/mediawiki(/.*)?"
+	"/var/cache/mod_.*"
+	httpd_cache_t
+		httpd_cache_t -> "/var/cache/mod_.*"
+	"/var/cache/mod_gnutls(/.*)?"
+	httpd_cache_t
+		httpd_cache_t -> "/var/cache/mod_gnutls(/.*)?"
+	"/var/cache/mod_proxy(/.*)?"
+	httpd_cache_t
+		httpd_cache_t -> "/var/cache/mod_proxy(/.*)?"
+	"/var/cache/mod_ssl(/.*)?"
+	httpd_cache_t
+		httpd_cache_t -> "/var/cache/mod_ssl(/.*)?"
+	"/var/cache/php-.*"
+	httpd_cache_t
+		httpd_cache_t -> "/var/cache/php-.*"
+	"/var/cache/php-eaccelerator(/.*)?"
+	httpd_cache_t
+		httpd_cache_t -> "/var/cache/php-eaccelerator(/.*)?"
+	"/var/cache/php-mmcache(/.*)?"
+	httpd_cache_t
+		httpd_cache_t -> "/var/cache/php-mmcache(/.*)?"
+	"/var/cache/rt(3|4)(/.*)?"
+	httpd_cache_t
+		httpd_cache_t -> "/var/cache/rt(3|4)(/.*)?"
+	"/var/cache/ssl.*\.sem"
+	httpd_cache_t
+		httpd_cache_t -> "/var/cache/ssl.*\.sem"
+	"/var/lib/bugzilla(/.*)?"
+	httpd_bugzilla_rw_content_t
+		httpd_bugzilla_rw_content_t -> "/var/lib/bugzilla(/.*)?"
+	"/var/lib/cacti/rra(/.*)?"
+	httpd_sys_content_t
+		httpd_sys_content_t -> "/var/lib/cacti/rra(/.*)?"
+	"/var/lib/cherokee(/.*)?"
+	httpd_var_lib_t
+		httpd_var_lib_t -> "/var/lib/cherokee(/.*)?"
+	"/var/lib/dav(/.*)?"
+	httpd_var_lib_t
+		httpd_var_lib_t -> "/var/lib/dav(/.*)?"
+	"/var/lib/dokuwiki(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/var/lib/dokuwiki(/.*)?"
+	"/var/lib/drupal.*"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/var/lib/drupal.*"
+	"/var/lib/dspam/data(/.*)?"
+	httpd_dspam_rw_content_t
+		httpd_dspam_rw_content_t -> "/var/lib/dspam/data(/.*)?"
+	"/var/lib/glpi(/.*)?"
+	httpd_var_lib_t
+		httpd_var_lib_t -> "/var/lib/glpi(/.*)?"
+	"/var/lib/htdig(/.*)?"
+	httpd_sys_content_t
+		httpd_sys_content_t -> "/var/lib/htdig(/.*)?"
+	"/var/lib/httpd(/.*)?"
+	httpd_var_lib_t
+		httpd_var_lib_t -> "/var/lib/httpd(/.*)?"
+	"/var/lib/lighttpd(/.*)?"
+	httpd_var_lib_t
+		httpd_var_lib_t -> "/var/lib/lighttpd(/.*)?"
+	"/var/lib/mod_security(/.*)?"
+	httpd_var_lib_t
+		httpd_var_lib_t -> "/var/lib/mod_security(/.*)?"
+	"/var/lib/mojomojo(/.*)?"
+	httpd_mojomojo_rw_content_t
+		httpd_mojomojo_rw_content_t -> "/var/lib/mojomojo(/.*)?"
+	"/var/lib/moodle(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/var/lib/moodle(/.*)?"
+	"/var/lib/nginx(/.*)?"
+	httpd_var_lib_t
+		httpd_var_lib_t -> "/var/lib/nginx(/.*)?"
+	"/var/lib/openshift/\.httpd\.d(/.*)?"
+	httpd_config_t
+		httpd_config_t -> "/var/lib/openshift/\.httpd\.d(/.*)?"
+	"/var/lib/openshift/\.log/httpd(/.*)?"
+	httpd_log_t
+		httpd_log_t -> "/var/lib/openshift/\.log/httpd(/.*)?"
+	"/var/lib/owncloud(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/var/lib/owncloud(/.*)?"
+	"/var/lib/php(/.*)?"
+	httpd_var_lib_t
+		httpd_var_lib_t -> "/var/lib/php(/.*)?"
+	"/var/lib/php/session(/.*)?"
+	httpd_var_run_t
+		httpd_var_run_t -> "/var/lib/php/session(/.*)?"
+	"/var/lib/php/wsdlcache(/.*)?"
+	httpd_var_run_t
+		httpd_var_run_t -> "/var/lib/php/wsdlcache(/.*)?"
+	"/var/lib/pootle/po(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/var/lib/pootle/po(/.*)?"
+	"/var/lib/rt(3|4)/data/RT-Shredder(/.*)?"
+	httpd_var_lib_t
+		httpd_var_lib_t -> "/var/lib/rt(3|4)/data/RT-Shredder(/.*)?"
+	"/var/lib/squirrelmail/prefs(/.*)?"
+	httpd_squirrelmail_t
+		httpd_squirrelmail_t -> "/var/lib/squirrelmail/prefs(/.*)?"
+	"/var/lib/stickshift/\.httpd\.d(/.*)?"
+	httpd_config_t
+		httpd_config_t -> "/var/lib/stickshift/\.httpd\.d(/.*)?"
+	"/var/lib/svn(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/var/lib/svn(/.*)?"
+	"/var/lib/trac(/.*)?"
+	httpd_sys_content_t
+		httpd_sys_content_t -> "/var/lib/trac(/.*)?"
+	"/var/lib/z-push(/.*)?"
+	httpd_var_lib_t
+		httpd_var_lib_t -> "/var/lib/z-push(/.*)?"
+	"/var/log/apache(2)?(/.*)?"
+	httpd_log_t
+		httpd_log_t -> "/var/log/apache(2)?(/.*)?"
+	"/var/log/apache-ssl(2)?(/.*)?"
+	httpd_log_t
+		httpd_log_t -> "/var/log/apache-ssl(2)?(/.*)?"
+	"/var/log/cacti(/.*)?"
+	httpd_log_t
+		httpd_log_t -> "/var/log/cacti(/.*)?"
+	"/var/log/cgiwrap\.log.*"
+	httpd_log_t
+		httpd_log_t -> "/var/log/cgiwrap\.log.*"
+	"/var/log/cherokee(/.*)?"
+	httpd_log_t
+		httpd_log_t -> "/var/log/cherokee(/.*)?"
+	"/var/log/dirsrv/admin-serv(/.*)?"
+	httpd_log_t
+		httpd_log_t -> "/var/log/dirsrv/admin-serv(/.*)?"
+	"/var/log/glpi(/.*)?"
+	httpd_log_t
+		httpd_log_t -> "/var/log/glpi(/.*)?"
+	"/var/log/httpd(/.*)?"
+	httpd_log_t
+		httpd_log_t -> "/var/log/httpd(/.*)?"
+	"/var/log/lighttpd(/.*)?"
+	httpd_log_t
+		httpd_log_t -> "/var/log/lighttpd(/.*)?"
+	"/var/log/nginx(/.*)?"
+	httpd_log_t
+		httpd_log_t -> "/var/log/nginx(/.*)?"
+	"/var/log/php-fpm(/.*)?"
+	httpd_log_t
+		httpd_log_t -> "/var/log/php-fpm(/.*)?"
+	"/var/log/php_errors\.log.*"
+	httpd_log_t
+		httpd_log_t -> "/var/log/php_errors\.log.*"
+	"/var/log/roundcubemail(/.*)?"
+	httpd_log_t
+		httpd_log_t -> "/var/log/roundcubemail(/.*)?"
+	"/var/log/suphp\.log.*"
+	httpd_log_t
+		httpd_log_t -> "/var/log/suphp\.log.*"
+	"/var/log/thttpd\.log.*"
+	httpd_log_t
+		httpd_log_t -> "/var/log/thttpd\.log.*"
+	"/var/log/z-push(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/var/log/z-push(/.*)?"
+	"/var/run/apache.*"
+	httpd_var_run_t
+		httpd_var_run_t -> "/var/run/apache.*"
+	"/var/run/cherokee\.pid"
+	httpd_var_run_t
+		httpd_var_run_t -> "/var/run/cherokee\.pid"
+	"/var/run/dirsrv/admin-serv.*"
+	httpd_var_run_t
+		httpd_var_run_t -> "/var/run/dirsrv/admin-serv.*"
+	"/var/run/gcache_port"
+	httpd_var_run_t
+		httpd_var_run_t -> "/var/run/gcache_port"
+	"/var/run/httpd.*"
+	httpd_var_run_t
+		httpd_var_run_t -> "/var/run/httpd.*"
+	"/var/run/lighttpd(/.*)?"
+	httpd_var_run_t
+		httpd_var_run_t -> "/var/run/lighttpd(/.*)?"
+	"/var/run/mod_.*"
+	httpd_var_run_t
+		httpd_var_run_t -> "/var/run/mod_.*"
+	"/var/run/nginx.*"
+	httpd_var_run_t
+		httpd_var_run_t -> "/var/run/nginx.*"
+	"/var/run/php-fpm(/.*)?"
+	httpd_var_run_t
+		httpd_var_run_t -> "/var/run/php-fpm(/.*)?"
+	"/var/run/thttpd\.pid"
+	httpd_var_run_t
+		httpd_var_run_t -> "/var/run/thttpd\.pid"
+	"/var/run/user/apache(/.*)?"
+	httpd_tmp_t
+		httpd_tmp_t -> "/var/run/user/apache(/.*)?"
+	"/var/run/wsgi.*"
+	httpd_var_run_t
+		httpd_var_run_t -> "/var/run/wsgi.*"
+	"/var/spool/gosa(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/var/spool/gosa(/.*)?"
+	"/var/spool/viewvc(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/var/spool/viewvc(/.*)?"
+	"/var/www(/.*)?"
+	httpd_sys_content_t
+		httpd_sys_content_t -> "/var/www(/.*)?"
+	"/var/www(/.*)?/logs(/.*)?"
+	httpd_log_t
+		httpd_log_t -> "/var/www(/.*)?/logs(/.*)?"
+	"/var/www/[^/]*/cgi-bin(/.*)?"
+	httpd_sys_script_exec_t
+		httpd_sys_script_exec_t -> "/var/www/[^/]*/cgi-bin(/.*)?"
+	"/var/www/apcupsd/multimon\.cgi"
+	httpd_apcupsd_cgi_script_exec_t
+		httpd_apcupsd_cgi_script_exec_t -> "/var/www/apcupsd/multimon\.cgi"
+	"/var/www/apcupsd/upsfstats\.cgi"
+	httpd_apcupsd_cgi_script_exec_t
+		httpd_apcupsd_cgi_script_exec_t -> "/var/www/apcupsd/upsfstats\.cgi"
+	"/var/www/apcupsd/upsimage\.cgi"
+	httpd_apcupsd_cgi_script_exec_t
+		httpd_apcupsd_cgi_script_exec_t -> "/var/www/apcupsd/upsimage\.cgi"
+	"/var/www/apcupsd/upsstats\.cgi"
+	httpd_apcupsd_cgi_script_exec_t
+		httpd_apcupsd_cgi_script_exec_t -> "/var/www/apcupsd/upsstats\.cgi"
+	"/var/www/cgi-bin(/.*)?"
+	httpd_sys_script_exec_t
+		httpd_sys_script_exec_t -> "/var/www/cgi-bin(/.*)?"
+	"/var/www/cgi-bin/apcgui(/.*)?"
+	httpd_apcupsd_cgi_script_exec_t
+		httpd_apcupsd_cgi_script_exec_t -> "/var/www/cgi-bin/apcgui(/.*)?"
+	"/var/www/cgi-bin/cgit"
+	httpd_git_script_exec_t
+		httpd_git_script_exec_t -> "/var/www/cgi-bin/cgit"
+	"/var/www/cgi-bin/cvsweb\.cgi"
+	httpd_cvs_script_exec_t
+		httpd_cvs_script_exec_t -> "/var/www/cgi-bin/cvsweb\.cgi"
+	"/var/www/cgi-bin/munin.*"
+	httpd_munin_script_exec_t
+		httpd_munin_script_exec_t -> "/var/www/cgi-bin/munin.*"
+	"/var/www/dspam(/.*?)"
+	httpd_dspam_content_t
+		httpd_dspam_content_t -> "/var/www/dspam(/.*?)"
+	"/var/www/dspam/.*\.cgi"
+	httpd_dspam_script_exec_t
+		httpd_dspam_script_exec_t -> "/var/www/dspam/.*\.cgi"
+	"/var/www/gallery/albums(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/var/www/gallery/albums(/.*)?"
+	"/var/www/git(/.*)?"
+	httpd_git_content_t
+		httpd_git_content_t -> "/var/www/git(/.*)?"
+	"/var/www/git/gitweb\.cgi"
+	httpd_git_script_exec_t
+		httpd_git_script_exec_t -> "/var/www/git/gitweb\.cgi"
+	"/var/www/gitweb-caching/gitweb\.cgi"
+	httpd_git_script_exec_t
+		httpd_git_script_exec_t -> "/var/www/gitweb-caching/gitweb\.cgi"
+	"/var/www/html(/.*)?/sites/default/files(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/var/www/html(/.*)?/sites/default/files(/.*)?"
+	"/var/www/html(/.*)?/sites/default/settings\.php"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/var/www/html(/.*)?/sites/default/settings\.php"
+	"/var/www/html(/.*)?/uploads(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/var/www/html(/.*)?/uploads(/.*)?"
+	"/var/www/html(/.*)?/wp-content(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/var/www/html(/.*)?/wp-content(/.*)?"
+	"/var/www/html/[^/]*/cgi-bin(/.*)?"
+	httpd_sys_script_exec_t
+		httpd_sys_script_exec_t -> "/var/www/html/[^/]*/cgi-bin(/.*)?"
+	"/var/www/html/cgi/munin.*"
+	httpd_munin_script_exec_t
+		httpd_munin_script_exec_t -> "/var/www/html/cgi/munin.*"
+	"/var/www/html/configuration\.php"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/var/www/html/configuration\.php"
+	"/var/www/html/munin(/.*)?"
+	httpd_munin_content_t
+		httpd_munin_content_t -> "/var/www/html/munin(/.*)?"
+	"/var/www/html/munin/cgi(/.*)?"
+	httpd_munin_script_exec_t
+		httpd_munin_script_exec_t -> "/var/www/html/munin/cgi(/.*)?"
+	"/var/www/html/owncloud/data(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/var/www/html/owncloud/data(/.*)?"
+	"/var/www/icons(/.*)?"
+	httpd_sys_content_t
+		httpd_sys_content_t -> "/var/www/icons(/.*)?"
+	"/var/www/miq/vmdb/log(/.*)?"
+	httpd_log_t
+		httpd_log_t -> "/var/www/miq/vmdb/log(/.*)?"
+	"/var/www/moodle/data(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/var/www/moodle/data(/.*)?"
+	"/var/www/moodledata(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/var/www/moodledata(/.*)?"
+	"/var/www/nut-cgi-bin/upsimage\.cgi"
+	httpd_nutups_cgi_script_exec_t
+		httpd_nutups_cgi_script_exec_t -> "/var/www/nut-cgi-bin/upsimage\.cgi"
+	"/var/www/nut-cgi-bin/upsset\.cgi"
+	httpd_nutups_cgi_script_exec_t
+		httpd_nutups_cgi_script_exec_t -> "/var/www/nut-cgi-bin/upsset\.cgi"
+	"/var/www/nut-cgi-bin/upsstats\.cgi"
+	httpd_nutups_cgi_script_exec_t
+		httpd_nutups_cgi_script_exec_t -> "/var/www/nut-cgi-bin/upsstats\.cgi"
+	"/var/www/openshift/broker/httpd/logs(/.*)?"
+	httpd_log_t
+		httpd_log_t -> "/var/www/openshift/broker/httpd/logs(/.*)?"
+	"/var/www/openshift/broker/httpd/run(/.*)?"
+	httpd_var_run_t
+		httpd_var_run_t -> "/var/www/openshift/broker/httpd/run(/.*)?"
+	"/var/www/openshift/console/httpd/logs(/.*)?"
+	httpd_log_t
+		httpd_log_t -> "/var/www/openshift/console/httpd/logs(/.*)?"
+	"/var/www/openshift/console/httpd/run(/.*)?"
+	httpd_var_run_t
+		httpd_var_run_t -> "/var/www/openshift/console/httpd/run(/.*)?"
+	"/var/www/openshift/console/log(/.*)?"
+	httpd_log_t
+		httpd_log_t -> "/var/www/openshift/console/log(/.*)?"
+	"/var/www/openshift/console/tmp(/.*)?"
+	httpd_tmp_t
+		httpd_tmp_t -> "/var/www/openshift/console/tmp(/.*)?"
+	"/var/www/perl(/.*)?"
+	httpd_sys_script_exec_t
+		httpd_sys_script_exec_t -> "/var/www/perl(/.*)?"
+	"/var/www/stickshift/[^/]*/log(/.*)?"
+	httpd_log_t
+		httpd_log_t -> "/var/www/stickshift/[^/]*/log(/.*)?"
+	"/var/www/svn(/.*)?"
+	httpd_sys_rw_content_t
+		httpd_sys_rw_content_t -> "/var/www/svn(/.*)?"
+	"/var/www/svn/conf(/.*)?"
+	httpd_sys_content_t
+		httpd_sys_content_t -> "/var/www/svn/conf(/.*)?"
+	"/var/www/svn/hooks(/.*)?"
+	httpd_sys_script_exec_t
+		httpd_sys_script_exec_t -> "/var/www/svn/hooks(/.*)?"
+	"/var/www/usage(/.*)?"
+	httpd_webalizer_content_t
+		httpd_webalizer_content_t -> "/var/www/usage(/.*)?"
+	"/var/www/wiki(/.*)?"
+	httpd_mediawiki_rw_content_t
+		httpd_mediawiki_rw_content_t -> "/var/www/wiki(/.*)?"
+	"/var/www/wiki/.*\.php"
+	httpd_mediawiki_content_t
+		httpd_mediawiki_content_t -> "/var/www/wiki/.*\.php"
+}

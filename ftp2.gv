@@ -1,0 +1,53 @@
+// None
+digraph ftp_test2 {
+rankdir=LR
+size="8,5"
+	vsftpd
+	ftpd_t
+		vsftpd -> ftpd_t
+	ftp_home_dir
+	ftpd_t
+		ftpd_t -> ftp_home_dir
+	ftpd_use_cifs
+	ftpd_t
+		ftpd_t -> ftpd_use_cifs
+	ftpd_use_fusefs
+	ftpd_t
+		ftpd_t -> ftpd_use_fusefs
+	ftpd_connect_db
+	ftpd_t
+		ftpd_t -> ftpd_connect_db
+	ftpd_full_access
+	ftpd_t
+		ftpd_t -> ftpd_full_access
+	tftp_home_dir
+	tftpd_t
+		tftpd_t -> tftp_home_dir
+	sftpd_enable_homedirs
+	sftpd_t
+		sftpd_t -> sftpd_enable_homedirs
+	ftpd_use_passive_mode
+	ftpd_t
+		ftpd_t -> ftpd_use_passive_mode
+	sftpd_write_ssh_home
+	sftpd_t
+		sftpd_t -> sftpd_write_ssh_home
+	ftpd_use_nfs
+	ftpd_t
+		ftpd_t -> ftpd_use_nfs
+	ftpd_connect_all_unreserved
+	ftpd_t
+		ftpd_t -> ftpd_connect_all_unreserved
+	sftpd_full_access
+	sftpd_t
+		sftpd_t -> sftpd_full_access
+	tftp_anon_write
+	tftpd_t
+		tftpd_t -> tftp_anon_write
+	ftpd_anon_write
+	ftpd_t
+		ftpd_t -> ftpd_anon_write
+	sftpd_anon_write
+	anon_sftpd_t
+		anon_sftpd_t -> sftpd_anon_write
+}
