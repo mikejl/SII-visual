@@ -1,53 +1,53 @@
 // None
-digraph ftp_test2 {
+graph ftp_test2 {
 rankdir=LR
 size="8,5"
 	vsftpd
 	ftpd_t
-		vsftpd -> ftpd_t
+		vsftpd -- ftpd_t
 	ftp_home_dir
 	ftpd_t
-		ftpd_t -> ftp_home_dir
+		ftpd_t -- ftp_home_dir [Label=off]
 	ftpd_use_cifs
 	ftpd_t
-		ftpd_t -> ftpd_use_cifs
+		ftpd_t -- ftpd_use_cifs [Label=off]
 	ftpd_use_fusefs
 	ftpd_t
-		ftpd_t -> ftpd_use_fusefs
+		ftpd_t -- ftpd_use_fusefs [Label=off]
 	ftpd_connect_db
 	ftpd_t
-		ftpd_t -> ftpd_connect_db
+		ftpd_t -- ftpd_connect_db [Label=off]
 	ftpd_full_access
 	ftpd_t
-		ftpd_t -> ftpd_full_access
+		ftpd_t -- ftpd_full_access [Label=off]
 	tftp_home_dir
 	tftpd_t
-		tftpd_t -> tftp_home_dir
+		tftpd_t -- tftp_home_dir [Label=off]
 	sftpd_enable_homedirs
 	sftpd_t
-		sftpd_t -> sftpd_enable_homedirs
+		sftpd_t -- sftpd_enable_homedirs [Label=off]
 	ftpd_use_passive_mode
 	ftpd_t
-		ftpd_t -> ftpd_use_passive_mode
+		ftpd_t -- ftpd_use_passive_mode [Label=off]
 	sftpd_write_ssh_home
 	sftpd_t
-		sftpd_t -> sftpd_write_ssh_home
+		sftpd_t -- sftpd_write_ssh_home [Label=off]
 	ftpd_use_nfs
 	ftpd_t
-		ftpd_t -> ftpd_use_nfs
+		ftpd_t -- ftpd_use_nfs [Label=off]
 	ftpd_connect_all_unreserved
 	ftpd_t
-		ftpd_t -> ftpd_connect_all_unreserved
+		ftpd_t -- ftpd_connect_all_unreserved [Label=off]
 	sftpd_full_access
 	sftpd_t
-		sftpd_t -> sftpd_full_access
+		sftpd_t -- sftpd_full_access [Label=off]
 	tftp_anon_write
 	tftpd_t
-		tftpd_t -> tftp_anon_write
+		tftpd_t -- tftp_anon_write [Label=off]
 	ftpd_anon_write
 	ftpd_t
-		ftpd_t -> ftpd_anon_write
+		ftpd_t -- ftpd_anon_write [Label=off]
 	sftpd_anon_write
 	anon_sftpd_t
-		anon_sftpd_t -> sftpd_anon_write
+		anon_sftpd_t -- sftpd_anon_write [Label=off]
 }
