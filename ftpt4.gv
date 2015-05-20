@@ -7,7 +7,7 @@ size="8,5"
 		vsftpd -- ftpd_t
 	ftp_home_dir
 	ftpd_t
-		ftpd_t -- ftp_home_dir [label=off]
+		ftpd_t -- ftp_home_dir [label=on]
 	ftpd_use_cifs
 	ftpd_t
 		ftpd_t -- ftpd_use_cifs [label=off]
@@ -48,6 +48,8 @@ size="8,5"
 	ftpd_t
 		ftpd_t -- ftpd_anon_write [label=off]
 	sftpd_anon_write
-	sftpd_t
-		sftpd_t -- sftpd_anon_write [label=off]
+	anon_sftpd_t
+		anon_sftpd_t -- sftpd_anon_write [label=off]
+	tftpd
+		tftpd -- tftpd_t
 }

@@ -1,0 +1,128 @@
+// None
+graph {
+rankdir=LR
+size="8,5"
+	httpd
+	httpd_t
+		httpd -- httpd_t
+	httpd_can_network_relay
+	httpd_t
+		httpd_t -- httpd_can_network_relay [label=off]
+	httpd_can_connect_mythtv
+	httpd_t
+		httpd_t -- httpd_can_connect_mythtv [label=off]
+	httpd_can_network_connect_db
+	httpd_suexec_t
+		httpd_suexec_t -- httpd_can_network_connect_db [label=off]
+	httpd_use_gpg
+	httpd_t
+		httpd_t -- httpd_use_gpg [label=off]
+	httpd_dbus_sssd
+	httpd_t
+		httpd_t -- httpd_dbus_sssd [label=off]
+	httpd_enable_cgi
+	httpd_suexec_t
+		httpd_suexec_t -- httpd_enable_cgi [label=on]
+	httpd_verify_dns
+	httpd_t
+		httpd_t -- httpd_verify_dns [label=off]
+	git_cgi_enable_homedirs
+	httpd_git_script_t
+		httpd_git_script_t -- git_cgi_enable_homedirs [label=off]
+	httpd_anon_write
+	httpd_t
+		httpd_t -- httpd_anon_write [label=off]
+	httpd_use_cifs
+	httpd_suexec_t
+		httpd_suexec_t -- httpd_use_cifs [label=off]
+	httpd_enable_homedirs
+	httpd_suexec_t
+		httpd_suexec_t -- httpd_enable_homedirs [label=off]
+	httpd_unified
+	httpd_sys_script_t
+		httpd_sys_script_t -- httpd_unified [label=off]
+	httpd_run_stickshift
+	httpd_t
+		httpd_t -- httpd_run_stickshift [label=off]
+	httpd_use_fusefs
+	httpd_suexec_t
+		httpd_suexec_t -- httpd_use_fusefs [label=off]
+	httpd_can_connect_ldap
+	httpd_t
+		httpd_t -- httpd_can_connect_ldap [label=off]
+	httpd_can_network_connect
+	httpd_t
+		httpd_t -- httpd_can_network_connect [label=off]
+	httpd_use_sasl
+	httpd_t
+		httpd_t -- httpd_use_sasl [label=off]
+	httpd_tty_comm
+	httpd_suexec_t
+		httpd_suexec_t -- httpd_tty_comm [label=off]
+	httpd_sys_script_anon_write
+	httpd_sys_script_t
+		httpd_sys_script_t -- httpd_sys_script_anon_write [label=off]
+	git_cgi_use_nfs
+	httpd_git_script_t
+		httpd_git_script_t -- git_cgi_use_nfs [label=off]
+	httpd_graceful_shutdown
+	httpd_t
+		httpd_t -- httpd_graceful_shutdown [label=on]
+	httpd_can_connect_ftp
+	httpd_t
+		httpd_t -- httpd_can_connect_ftp [label=off]
+	httpd_read_user_content
+	httpd_sys_script_t
+		httpd_sys_script_t -- httpd_read_user_content [label=off]
+	httpd_use_nfs
+	httpd_suexec_t
+		httpd_suexec_t -- httpd_use_nfs [label=off]
+	httpd_can_connect_zabbix
+	httpd_t
+		httpd_t -- httpd_can_connect_zabbix [label=off]
+	httpd_tmp_exec
+	httpd_sys_script_t
+		httpd_sys_script_t -- httpd_tmp_exec [label=off]
+	httpd_manage_ipa
+	httpd_t
+		httpd_t -- httpd_manage_ipa [label=off]
+	httpd_can_sendmail
+	httpd_t
+		httpd_t -- httpd_can_sendmail [label=off]
+	httpd_builtin_scripting
+	httpd_t
+		httpd_t -- httpd_builtin_scripting [label=on]
+	httpd_dbus_avahi
+	httpd_t
+		httpd_t -- httpd_dbus_avahi [label=off]
+	httpd_can_check_spam
+	httpd_t
+		httpd_t -- httpd_can_check_spam [label=off]
+	httpd_can_network_memcache
+	httpd_t
+		httpd_t -- httpd_can_network_memcache [label=off]
+	httpd_can_network_connect_cobbler
+	httpd_t
+		httpd_t -- httpd_can_network_connect_cobbler [label=off]
+	httpd_serve_cobbler_files
+	httpd_t
+		httpd_t -- httpd_serve_cobbler_files [label=off]
+	git_cgi_use_cifs
+	httpd_git_script_t
+		httpd_git_script_t -- git_cgi_use_cifs [label=off]
+	httpd_execmem
+	httpd_sys_script_t
+		httpd_sys_script_t -- httpd_execmem [label=off]
+	httpd_ssi_exec
+	httpd_t
+		httpd_t -- httpd_ssi_exec [label=off]
+	httpd_use_openstack
+	httpd_sys_script_t
+		httpd_sys_script_t -- httpd_use_openstack [label=off]
+	httpd_enable_ftp_server
+	httpd_t
+		httpd_t -- httpd_enable_ftp_server [label=off]
+	httpd_setrlimit
+	httpd_t
+		httpd_t -- httpd_setrlimit [label=off]
+}

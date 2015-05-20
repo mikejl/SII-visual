@@ -50,52 +50,6 @@ size="8,5"
 	sftpd_anon_write
 	sftpd_t
 		sftpd_t -- sftpd_anon_write [label=off]
-	vsftpd
-	ftpd_t
-		vsftpd -- ftpd_t
-	ftp_home_dir
-	ftpd_t
-		ftpd_t -- ftp_home_dir [label=off]
-	ftpd_use_cifs
-	ftpd_t
-		ftpd_t -- ftpd_use_cifs [label=off]
-	ftpd_use_fusefs
-	ftpd_t
-		ftpd_t -- ftpd_use_fusefs [label=off]
-	ftpd_connect_db
-	ftpd_t
-		ftpd_t -- ftpd_connect_db [label=off]
-	ftpd_full_access
-	ftpd_t
-		ftpd_t -- ftpd_full_access [label=off]
-	tftp_home_dir
-	tftpd_t
-		tftpd_t -- tftp_home_dir [label=off]
-	sftpd_enable_homedirs
-	sftpd_t
-		sftpd_t -- sftpd_enable_homedirs [label=off]
-	ftpd_use_passive_mode
-	ftpd_t
-		ftpd_t -- ftpd_use_passive_mode [label=off]
-	sftpd_write_ssh_home
-	sftpd_t
-		sftpd_t -- sftpd_write_ssh_home [label=off]
-	ftpd_use_nfs
-	ftpd_t
-		ftpd_t -- ftpd_use_nfs [label=off]
-	ftpd_connect_all_unreserved
-	ftpd_t
-		ftpd_t -- ftpd_connect_all_unreserved [label=off]
-	sftpd_full_access
-	sftpd_t
-		sftpd_t -- sftpd_full_access [label=off]
-	tftp_anon_write
-	tftpd_t
-		tftpd_t -- tftp_anon_write [label=off]
-	ftpd_anon_write
-	ftpd_t
-		ftpd_t -- ftpd_anon_write [label=off]
-	sftpd_anon_write
-	sftpd_t
-		sftpd_t -- sftpd_anon_write [label=off]
+	tftpd
+		tftpd -- tftpd_t
 }
